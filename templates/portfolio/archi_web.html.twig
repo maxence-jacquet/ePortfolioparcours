@@ -1,0 +1,91 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connaître l’architecture et les technologies d’un site Web{% endblock %}
+
+{% block body %}
+<nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/accueil">Accueil</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/pour_en_savoir_plus">Pour en savoir plus</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/cv">CV</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/eportfolio">ePortfolio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/parcours">Parcours</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<h1> Connaître l’architecture et les technologies d’un site Web </h1>
+
+<div class="card-container">
+  <div class="flip-card">
+
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <h2>Preuves</h2>
+      </div>
+
+      <div class="flip-card-back">
+        <ul>
+        <li class="li_apprentissage">
+        <img src="{{ asset('uploads/blog.png') }}" alt:"lettre de motivation" style="width: auto; height:250px">
+        </li>
+        <li class="li_apprentissage">
+        <h4>J'ai fait un blog qui utilise le langage html, css et javascript</h4>
+        </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="flip-card">
+
+    <div class="flip-card-inner">
+
+      <div class="flip-card-front">
+        <h2>Analyses réfléxives</h2>
+      </div>
+
+      <div class="flip-card-back">
+        <ul>
+        <li class="li_apprentissage">
+        <h4>Je connaissais déjà l'architecture d'un serveur web j'ai pu donc approfondir mes connaissances</h4>
+        </li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+
+  {% endblock %}
+
+{% block javascripts %}
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const cards = document.querySelectorAll('.flip-card');
+      cards.forEach(card => {
+        card.addEventListener('click', () => {
+          const inner = card.querySelector('.flip-card-inner');
+          inner.classList.toggle('flipped');
+        });
+      });
+    });
+  </script>
+{% endblock %}

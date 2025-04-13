@@ -1,0 +1,150 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ePortfolio{% endblock %}
+
+{% block body %}
+<nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/accueil">Accueil</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/pour_en_savoir_plus">Pour en savoir plus</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/cv">CV</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/eportfolio">ePortfolio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/parcours">Parcours</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<h1> ePortfolio </h1>
+
+<div class="card-container">
+  <div class="flip-card">
+
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <h2>Administrer</h2>
+      </div>
+
+        <div class="flip-card-back">
+          <ul>
+          <li>
+          <a class="apprentissage_critique" href="/administrer/maitriser_loi_fondamentale_electricite">
+            <h4>Maîtriser les lois fondamentales de l’électricité</h4>
+          </a>
+          </li>
+          <li>
+          <a class="apprentissage_critique" href="/administrer/configurer_fonction_base_reseau_local">
+            <h4>Configurer les fonctions de base du réseau local</h4>
+          </a>
+          </li>
+          <li>
+          <a class="apprentissage_critique" href="/administrer/maitrise_systeme_exploitation">
+            <h4>Maîtriser les rôles et les principes des systèmes d’exploitation pour configurer et administrer des réseaux et des services</h4>
+          </a>
+          </li>
+          </ul>
+        </div>
+
+    </div>
+    
+  </div>
+
+  <div class="flip-card">
+
+    <div class="flip-card-inner">
+
+      <div class="flip-card-front">
+        <h2>Connecter</h2>
+      </div>
+
+      <div class="flip-card-back">
+        <ul>
+
+        <li>
+        <a class="apprentissage_critique" href="/connecter/deployer_support_transmission">
+        <h4>Déployer des supports de transmission </h4>
+        </a>
+        </li>
+
+        <li>
+        <a class="apprentissage_critique" href="/connecter/communication">
+        <h4>Communiquer avec un tiers et adapter son discours et sa langue à son interlocuteur</h4>
+        </a>
+        </li>
+
+        </ul>
+      
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="flip-card">
+
+    <div class="flip-card-inner">
+
+        <div class="flip-card-front">
+            <h2>Programmer</h2>
+        </div>
+
+        <div class="flip-card-back">
+          <ul>
+
+          <li>
+          <a class="apprentissage_critique" href="/programmer/utilisation_systeme_informatique&outil">
+          <h4>Utiliser un système informatique et ses outils</h4>
+          </a>
+          </li>
+
+          <li>
+          <a class="apprentissage_critique" href="/programmer/architecture_web">
+          <h4>Connaître l’architecture et les technologies d’un site Web</h4>
+          </a>
+          </li>
+
+          <li>
+          <a class="apprentissage_critique" href="/programmer/integration_environnement_propice">
+          <h4>S’intégrer dans un environnement propice au développement et au travail collaboratif</h4>
+          </a>
+          </li>
+
+          </ul>
+        </div>
+
+      </div>
+  </div>
+</div>
+
+</style>
+{% endblock %}
+
+{% block javascripts %}
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const cards = document.querySelectorAll('.flip-card');
+      cards.forEach(card => {
+        card.addEventListener('click', () => {
+          const inner = card.querySelector('.flip-card-inner');
+          inner.classList.toggle('flipped');
+        });
+      });
+    });
+  </script>
+{% endblock %}
+

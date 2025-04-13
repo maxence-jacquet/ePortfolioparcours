@@ -1,0 +1,18 @@
+    #[Route('/programmer/integration_environnement_propice', name: 'app_intrg_environnement')]
+    public function integration_environnement(): Response
+    {
+        return $this->render('portfolio/integration_environnement_propice.twig', [
+            'controller_name' => 'PortfolioController',
+        ]);
+    }
+
+Modifier le titre 
+
+git clone https://github.com/maxence-jacquet/ePortfolio.git
+git pull
+
+composer install
+
+symphony check:requirements
+php -v 8.3.14
+composer -v
